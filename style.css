@@ -909,19 +909,20 @@
 }
 
 /* Projects */
-
 .projects {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url("./Images/background\ image.jpg") no-repeat center center/cover;
   color: #fff;
   padding: 60px 10%;
   text-align: center;
+  position: relative; /* Needed for ::after underline */
 }
 
 .projects h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
   color: #ffd700;
+  position: relative; /* Keep underline aligned */
 }
 
 /* Stylish underline animation */
@@ -930,9 +931,10 @@
   position: absolute;
   width: 60%;
   height: 4px;
-  background: #ffd700; /* golden underline for style contrast */
-  left: 110px;
+  background: #ffd700; /* golden underline */
+  left: 50%;
   bottom: -8px;
+  transform: translateX(-50%);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -1017,9 +1019,8 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .projects h2::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .projects h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -1042,10 +1043,14 @@
     padding: 6px 12px;
     margin: 5px;
   }
+  .projects h2 {
+    font-size: 1.5rem;
+  }
   .projects h2::after {
     width: 80%;
   }
 }
+
 
 
 
